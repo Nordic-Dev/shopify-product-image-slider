@@ -1,0 +1,28 @@
+<style>
+  .slick-next:before, .slick-prev:before{
+    color:#000;
+  }
+  .slick-next{
+    right:0px;
+    z-index: 100;
+  }
+  .slick-prev{
+    left:0px;
+    z-index:100;
+  }
+</style>
+<div class="slick-slider">
+    {% for image in product.images %}
+      <div>
+        <img class="mySlides" src="{{ image | img_url: 'master' }}" style="width:100%">
+      </div>
+	{% endfor %}
+  </div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+      jQuery('.slick-slider').slick({
+        dots: true
+      });
+    });
+  </script>
